@@ -77,7 +77,7 @@
 
                 </div>
                 <div class="container eventos">
-                    <div v-for="event in eventos.slice().reverse()">
+                    <div class="animated fadeInLeft" v-for="event in eventos.slice().reverse()">
                         <template v-if="event.type == 'good'">
                             <p class="good">{{event.msj}}</p>
                         </template>
