@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Human vs Monster</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/animate.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <template v-if="!newGame">
+                <div class="container entername">
+                    <p class="title">Enter your name</p>
+                    <input type="text" class="title-input" v-model="jugador">
+                    <button @click="iniciarJuego" class="btn btn-primary">New
+                        Game</button>
+                </div>
+            </template>
+            <template v-else>
+                <div class="container players">
+                    <div class="row">
+                        <div class="col-md-6 human-box">
+                            <p class="personaje">{{jugador}}</p>
+                            <img id="img-jugador" src="img/you.jpg" alt="">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar"
+                                    :style="{width: vida[0] + '%'}"
+                                    :aria-valuenow="vida[0]"
+                                    aria-valuemin="0"
+                                    aria-valuemax="100">{{vida[0]}}</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 monster-box">
+                            <p class="personaje">{{asesino.nombre}}</p>
+                            <img id="img-asesino" :src="asesino.img" alt="">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar"
+                                    :style="{width: vida[1] + '%'}"
+                                    :aria-valuenow="vida[1]"
+                                    aria-valuemin="0" aria-valuemax="100">{{vida[1]}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container botones">
+                    <template v-if="!terminado">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <button @click="attack(6,10)" class="botongame
+                                    red">Attack</button>
+                            </div>
+                            <div class="col-md-3">
+                                <button @click="attack(1, 16)" class="botongame
+                                    orange">Special Attack</button>
+                            </div>
+                            <div class="col-md-3">
+                                <button class="botongame green" @click="heal">Heal</button>
+                            </div>
+                            <div class="col-md-3">
+                                <button class="botongame gray" @click="newGame=
+                                    false">Surrender</button>
+                            </div>
+                        </div>
+                    </template>
+                    <template v-else>
+                        <div class="col-md-12">
+                            <button class="gray" @click="newGame=
+                                false">Play Again!</button>
+                        </div>
+                    </template>
+
+
+                </div>
+                <div class="container eventos">
+                    <div v-for="event in eventos.slice().reverse()">
+                        <template v-if="event.type == 'good'">
+                            <p class="good">{{event.msj}}</p>
+                        </template>
+                        <template v-if="event.type == 'bad'">
+                            <p class="bad">{{event.msj}}</p>
+                        </template>
+                        <template v-if="event.type == 'crit'">
+                            <p class="crit">{{event.msj}}</p>
+                        </template>
+                    </div>
+                </div>
+            </template>
+        </div>
+
+
+        <script src="js/app.js"></script>
+    </body>
+</html>
