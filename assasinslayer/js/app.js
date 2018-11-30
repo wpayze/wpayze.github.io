@@ -126,14 +126,15 @@ new Vue({
             
         },
         heal: function(){
-            let healing = this.damage(8, 22);
+            let healing = this.damage(8, 16);
+
             this.vida[0] += healing;
 
             this.assasin_atk();
             this.checkWin();
 
             this.eventos.push({
-                msj: 'You have healed ' + healing + ' Health Points.',
+                msj: 'You have healed ' + healing + ' Health Points. ',
                 type: 'good'
             });
 
