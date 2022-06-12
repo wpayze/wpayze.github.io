@@ -194,7 +194,7 @@
         height: 100%;
         overflow: hidden;
       }
-/* 
+      /* 
       body {
         width: 100%;
         height: 100%;
@@ -299,24 +299,20 @@
       } */
 
       label {
-        color: rgb(224, 153, 86);
-        text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        color: rgba(0, 0, 0, 0.3);
       }
 
       input {
         width: 100%;
         margin-bottom: 10px;
-        background: rgba(0, 0, 0, 0.3);
+        background: #fff;
         border: none;
         outline: none;
         padding: 10px;
         font-size: 13px;
         color: #fff;
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
-        border: 1px solid rgba(0, 0, 0, 0.3);
+        border: 1px solid #257953;
         border-radius: 4px;
-        box-shadow: inset 0 -5px 45px rgba(100, 100, 100, 0.2),
-          0 1px 1px rgba(255, 255, 255, 0.2);
         -webkit-transition: box-shadow 0.5s ease;
         -moz-transition: box-shadow 0.5s ease;
         -o-transition: box-shadow 0.5s ease;
@@ -325,8 +321,19 @@
       }
 
       input:focus {
-        box-shadow: inset 0 -5px 45px rgba(100, 100, 100, 0.4),
-          0 1px 1px rgba(255, 255, 255, 0.2);
+        box-shadow: inset 0 -5px 45px #fafafa, 0 1px 1px #fafafa;
+      }
+
+      #next {
+        margin: 0 auto;
+        width: 60%;
+        height: 50px;
+        background-color: #296ec6;
+        border-radius: 0.5rem;
+        border: none;
+        color: #fff;
+        font-size: 1em;
+        margin-top: 10px;
       }
     </style>
   </head>
