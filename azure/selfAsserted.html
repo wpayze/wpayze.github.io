@@ -14,7 +14,157 @@
       crossorigin="anonymous"
     ></script>
     <link rel="icon" href="favicon.ico" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+      @import url("https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css");
+
+      :root {
+        --green-color: #176a78;
+        --white1-color: #f2f7fc;
+        --white2-color: #ffffff;
+        --white3-color: #fafafa;
+        --yellow-color: #f2e177;
+      }
+
+      /* Mines for Index Page*/
+
+      body {
+        font-family: Roboto;
+      }
+
+      .logo-login-section {
+        padding: 0 0 3rem 0;
+      }
+
+      .fa-lock {
+        color: var(--green-color);
+      }
+
+      a {
+        color: var(--green-color);
+      }
+
+      .is-login-button-remember-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      input[type="checkbox"] {
+        accent-color: var(--green-color);
+      }
+
+      .is-background-white {
+        background-color: var(--white3-color);
+      }
+
+      .button-primary {
+        background-color: var(--green-color);
+        color: var(--white1-color);
+      }
+
+      .has-background-img-blackpattern {
+        background: url("../images/BlackPatternBlock.jpg");
+      }
+
+      .is-text-color-white1 {
+        color: var(--white1-color);
+      }
+
+      .is-text-color-white2 {
+        color: var(--white2-color);
+      }
+
+      .is-text-color-green {
+        color: var(--green-color);
+      }
+
+      hr {
+        border: 0;
+        clear: both;
+        display: block;
+        width: 100%;
+        background-color: #cccccc;
+        height: 1px;
+        margin: 0 0;
+      }
+
+      .mysection {
+        padding: 0rem 3rem;
+      }
+
+      .has-background-img-airplane {
+        background: url("../images/airplane.jpg");
+        background-size: cover;
+      }
+
+      .background-mobile {
+        background-position: 0px -45px;
+        background-repeat: no-repeat;
+      }
+
+      .background-text {
+        position: absolute;
+        bottom: 5%;
+        color: #f2f7fc;
+        letter-spacing: 1.5px;
+      }
+
+      .is-text-color-yellow {
+        color: var(--yellow-color);
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+      }
+
+      .has-background-img-yate {
+        background: url("../images/hero-2.png");
+        background-size: cover;
+      }
+
+      .hero-login-button {
+        position: absolute;
+        z-index: 1;
+        right: 2%;
+        top: 5%;
+      }
+
+      .mybtn-blue {
+        color: #ffffff;
+        background: #176a78;
+        border-color: #ffffff;
+        border-width: 1px;
+        border-style: solid;
+      }
+
+      .mybtn-blue:hover {
+        background: #ffffff;
+        color: #176a78;
+        border-color: #176a78;
+      }
+
+      html,
+      body,
+      #app {
+        height: 100%;
+      }
+
+      #app {
+        min-height: 100%;
+      }
+
+      .footer {
+        margin-top: -12px;
+      }
+
+      @media screen and (max-width: 768px) {
+        #menu-toggle:checked + .nav-menu {
+          display: block;
+        }
+      }
+
+      .fullheight {
+        height: 100%;
+      }
+    </style>
   </head>
 
   <body>
@@ -26,18 +176,16 @@
           <div
             class="container section is-fullhd has-background-img-blackpattern"
           >
-            <img
-              src="images/logo-white.png"
-              alt="Savvly Inc. white logo"
-            />
+            <img src="images/logo-white.png" alt="Savvly Inc. white logo" />
             <p class="is-size-7 is-uppercase is-text-color-white1">
               live more. earn more.
             </p>
           </div>
 
-          <div class="container column is-12 is-hidden-desktop has-background-img-airplane background-mobile">
-            <div class="section">
-            </div>
+          <div
+            class="container column is-12 is-hidden-desktop has-background-img-airplane background-mobile"
+          >
+            <div class="section"></div>
           </div>
 
           <div class="container section is-fullhd">
@@ -103,11 +251,16 @@
 
           <div class="container section is-fullhd">
             <p class="is-size-6">
-              Forgot <a class="has-text-weight-bold" href="javascript:void(0)">password</a>?
+              Forgot
+              <a class="has-text-weight-bold" href="javascript:void(0)"
+                >password</a
+              >?
             </p>
             <p class="is-size-6">
               Needs an account?
-              <a class="has-text-weight-bold" href="javascript:void(0)">Advisor registration</a>
+              <a class="has-text-weight-bold" href="javascript:void(0)"
+                >Advisor registration</a
+              >
             </p>
           </div>
 
@@ -118,14 +271,15 @@
           </div>
         </aside>
 
-        <div class="container column is-8 is-hidden-mobile has-background-img-airplane">
+        <div
+          class="container column is-8 is-hidden-mobile has-background-img-airplane"
+        >
           <div class="section">
-            <h1 class="is-size-4 background-text has-text-weight-light	">
+            <h1 class="is-size-4 background-text has-text-weight-light">
               Secure your lifestyle for the future.
             </h1>
           </div>
         </div>
-        
       </div>
     </div>
   </body>
