@@ -13,10 +13,22 @@
       src="https://kit.fontawesome.com/f6b25c2489.js"
       crossorigin="anonymous"
     ></script> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="icon" href="favicon.ico" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    />
     <style>
       :root {
         --green-color: #176a78;
@@ -166,7 +178,159 @@
       }
     </style>
 
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
+      * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        -o-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      html {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      body {
+        width: 100%;
+        height: 100%;
+        font-family: "Open Sans", sans-serif;
+        color: rgb(224, 153, 86);
+        background: #092756;
+        background: -moz-radial-gradient(
+            0% 100%,
+            ellipse cover,
+            rgba(104, 128, 138, 0.4) 10%,
+            rgba(138, 114, 76, 0) 40%
+          ),
+          -moz-linear-gradient(top, rgba(57, 173, 219, 0.25) 0%, rgba(
+                  42,
+                  60,
+                  87,
+                  0.4
+                )
+                100%),
+          -moz-linear-gradient(-45deg, #670d10 0%, #092756 100%);
+        background: -webkit-radial-gradient(
+            0% 100%,
+            ellipse cover,
+            rgba(104, 128, 138, 0.4) 10%,
+            rgba(138, 114, 76, 0) 40%
+          ),
+          -webkit-linear-gradient(top, rgba(57, 173, 219, 0.25) 0%, rgba(
+                  42,
+                  60,
+                  87,
+                  0.4
+                )
+                100%),
+          -webkit-linear-gradient(-45deg, #670d10 0%, #092756 100%);
+        background: -o-radial-gradient(
+            0% 100%,
+            ellipse cover,
+            rgba(104, 128, 138, 0.4) 10%,
+            rgba(138, 114, 76, 0) 40%
+          ),
+          -o-linear-gradient(top, rgba(57, 173, 219, 0.25) 0%, rgba(
+                  42,
+                  60,
+                  87,
+                  0.4
+                )
+                100%),
+          -o-linear-gradient(-45deg, #670d10 0%, #092756 100%);
+        background: -ms-radial-gradient(
+            0% 100%,
+            ellipse cover,
+            rgba(104, 128, 138, 0.4) 10%,
+            rgba(138, 114, 76, 0) 40%
+          ),
+          -ms-linear-gradient(top, rgba(57, 173, 219, 0.25) 0%, rgba(
+                  42,
+                  60,
+                  87,
+                  0.4
+                )
+                100%),
+          -ms-linear-gradient(-45deg, #670d10 0%, #092756 100%);
+        background: -webkit-radial-gradient(
+            0% 100%,
+            ellipse cover,
+            rgba(104, 128, 138, 0.4) 10%,
+            rgba(138, 114, 76, 0) 40%
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(57, 173, 219, 0.25) 0%,
+            rgba(42, 60, 87, 0.4) 100%
+          ),
+          linear-gradient(135deg, #670d10 0%, #092756 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3E1D6D', endColorstr='#092756', GradientType=1);
+      }
+
+      .btn-block {
+        margin-bottom: 10px;
+      }
+
+      .login {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        margin: -150px 0 0 -150px;
+        /*width: 300px;
+      height: 300px;*/
+      }
+
+      .login h1 {
+        color: #fff;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        letter-spacing: 1px;
+        text-align: center;
+      }
+
+      .login h2 {
+        color: rgb(224, 153, 86);
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        letter-spacing: 1px;
+        text-align: center;
+        font-size: 1.2em;
+      }
+
+      label {
+        color: rgb(224, 153, 86);
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+
+      input {
+        width: 100%;
+        margin-bottom: 10px;
+        background: rgba(0, 0, 0, 0.3);
+        border: none;
+        outline: none;
+        padding: 10px;
+        font-size: 13px;
+        color: #fff;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        border-radius: 4px;
+        box-shadow: inset 0 -5px 45px rgba(100, 100, 100, 0.2),
+          0 1px 1px rgba(255, 255, 255, 0.2);
+        -webkit-transition: box-shadow 0.5s ease;
+        -moz-transition: box-shadow 0.5s ease;
+        -o-transition: box-shadow 0.5s ease;
+        -ms-transition: box-shadow 0.5s ease;
+        transition: box-shadow 0.5s ease;
+      }
+
+      input:focus {
+        box-shadow: inset 0 -5px 45px rgba(100, 100, 100, 0.4),
+          0 1px 1px rgba(255, 255, 255, 0.2);
+      }
+    </style>
   </head>
 
   <body>
@@ -178,7 +342,10 @@
           <div
             class="container section is-fullhd has-background-img-blackpattern"
           >
-            <img src="https://wpayze.github.io/azure/images/logo-white.png" alt="Savvly Inc. white logo" />
+            <img
+              src="https://wpayze.github.io/azure/images/logo-white.png"
+              alt="Savvly Inc. white logo"
+            />
             <p class="is-size-7 is-uppercase is-text-color-white1">
               live more. earn more.
             </p>
@@ -192,14 +359,16 @@
 
           <div class="container section is-fullhd">
             <div class="field">
-               <div class="control">
-                 <i class="fa-solid fa-lock"></i>
-                 <span class="is-text-color-green has-text-weight-bold"> Login</span>
-               </div>
-             </div>
- 
-             <br>
-             
+              <div class="control">
+                <i class="fa-solid fa-lock"></i>
+                <span class="is-text-color-green has-text-weight-bold">
+                  Login</span
+                >
+              </div>
+            </div>
+
+            <br />
+
             <div id="api" data-name="SelfAsserted"></div>
           </div>
 
@@ -280,7 +449,7 @@
               <hr />
             </div>
           </div>
-         </div>
+        </div>
 
         <div
           class="container column is-8 is-hidden-mobile has-background-img-airplane"
