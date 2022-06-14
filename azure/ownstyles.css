@@ -1,0 +1,254 @@
+:root {
+  --green-color: #176a78;
+  --white1-color: #f2f7fc;
+  --white2-color: #ffffff;
+  --white3-color: #fafafa;
+  --yellow-color: #f2e177;
+}
+
+/* Mines for Index Page*/
+
+body {
+  font-family: Roboto;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+label {
+  color: #000;
+}
+
+input {
+  width: 100%;
+  margin-bottom: 10px;
+  background: #fff;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 13px;
+  color: #4a4a4a;
+  border: 1px solid var(--green-color);
+  border-radius: 4px;
+  -webkit-transition: box-shadow 0.5s ease;
+  -moz-transition: box-shadow 0.5s ease;
+  -o-transition: box-shadow 0.5s ease;
+  -ms-transition: box-shadow 0.5s ease;
+  transition: box-shadow 0.5s ease;
+}
+
+hr {
+  border: 0;
+  clear: both;
+  display: block;
+  width: 100%;
+  background-color: #cccccc;
+  height: 1px;
+  margin: 0 0;
+}
+
+a {
+  color: var(--green-color);
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+#attributeVerification #attributeList ul li input {
+  width: 100%;
+}
+
+#attributeList ul li input {
+  height: 50px;
+  width: 70%;
+  border-radius: 0.5rem;
+  text-indent: 20px;
+}
+
+#attributeList ul li .attrEntry .verificationControlContent .sendCode {
+  width: 60%;
+  height: 50px;
+  background-color: var(--green-color);
+  color: #fff;
+  border-radius: 0.5rem;
+}
+
+.buttons button:not([aria-disabled="true"]) {
+  opacity: 1;
+}
+
+.buttons button {
+  margin: 0 auto;
+  width: 60%;
+  height: 50px;
+  background-color: var(--green-color);
+  border-radius: 0.5rem;
+  border: none;
+  color: #fff;
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+input[type="checkbox"] {
+  accent-color: var(--green-color);
+}
+
+input:focus {
+  box-shadow: inset 0 -5px 45px var(--white3-color),
+    0 1px 1px var(--white3-color);
+}
+
+.logo-login-section {
+  padding: 0 0 3rem 0;
+}
+
+.fa-lock {
+  color: var(--green-color);
+}
+
+.is-login-button-remember-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.is-background-white {
+  background-color: var(--white3-color);
+}
+
+.button-primary {
+  background-color: var(--green-color);
+  color: var(--white1-color);
+}
+
+.has-background-img-blackpattern {
+  background: url("https://wpayze.github.io/azure/images/BlackPatternBlock.jpg");
+}
+
+.is-text-color-white1 {
+  color: var(--white1-color);
+}
+
+.is-text-color-white2 {
+  color: var(--white2-color);
+}
+
+.is-text-color-green {
+  color: var(--green-color);
+}
+
+.mysection {
+  padding: 0rem 3rem;
+}
+
+.has-background-img-airplane {
+  background: url("https://wpayze.github.io/azure/images/airplane.jpg");
+  background-size: cover;
+}
+
+.background-mobile {
+  background-position: 0px -45px;
+  background-repeat: no-repeat;
+}
+
+.background-text {
+  position: absolute;
+  bottom: 5%;
+  color: #f2f7fc;
+  letter-spacing: 1.5px;
+}
+
+.is-text-color-yellow {
+  color: var(--yellow-color);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+.has-background-img-yate {
+  background: url("https://wpayze.github.io/azure/images/hero-2.png");
+  background-size: cover;
+}
+
+.hero-login-button {
+  position: absolute;
+  z-index: 1;
+  right: 2%;
+  top: 5%;
+}
+
+.mybtn-blue {
+  color: #ffffff;
+  background: #176a78;
+  border-color: #ffffff;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.mybtn-blue:hover {
+  background: #ffffff;
+  color: #176a78;
+  border-color: #176a78;
+}
+
+#app {
+  min-height: 100%;
+}
+
+.footer {
+  margin-top: -12px;
+}
+
+.fullheight {
+  height: 100%;
+}
+
+.btn-block {
+  margin-bottom: 10px;
+}
+
+#next {
+  margin: 0 0;
+  width: 34%;
+  height: 40px;
+  background-color: var(--green-color);
+  border-radius: 0.5rem;
+  border: none;
+  color: #fff;
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+#forgotPassword {
+  display: none;
+}
+
+.heading > h1 {
+  display: none;
+}
+
+.intro > h2 {
+  display: none;
+}
+
+.error {
+  color: red;
+}
+
+@media screen and (max-width: 768px) {
+  #menu-toggle:checked + .nav-menu {
+    display: block;
+  }
+}
