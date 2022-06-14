@@ -1,300 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Savvly - Login Page 2</title>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="" />
-    <meta name="author" content="Mainor and Will" />
-    <!-- <script
+
+<head>
+  <title>Savvly - Login Page 2</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="Mainor and Will" />
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="https://savvly.com/product/images/favicon.ico">
+  <!-- <script
       src="https://kit.fontawesome.com/f6b25c2489.js"
       crossorigin="anonymous"
     ></script> -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="icon" href="favicon.ico" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-    />
-    <style>
-      :root {
-        --green-color: #176a78;
-        --white1-color: #f2f7fc;
-        --white2-color: #ffffff;
-        --white3-color: #fafafa;
-        --yellow-color: #f2e177;
-      }
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" />
+  <style>
+    :root {
+      --green-color: #176a78;
+      --white1-color: #f2f7fc;
+      --white2-color: #ffffff;
+      --white3-color: #fafafa;
+      --yellow-color: #f2e177;
+    }
 
-      /* Mines for Index Page*/
+    /* Mines for Index Page*/
 
-      body {
-        font-family: Roboto;
-      }
+    body {
+      font-family: Roboto;
+    }
 
-      .logo-login-section {
-        padding: 0 0 3rem 0;
-      }
+    .logo-login-section {
+      padding: 0 0 3rem 0;
+    }
 
-      .fa-lock {
-        color: var(--green-color);
-      }
+    .fa-lock {
+      color: var(--green-color);
+    }
 
-      a {
-        color: var(--green-color);
-      }
+    a {
+      color: var(--green-color);
+    }
 
-      .is-login-button-remember-flex {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
+    .is-login-button-remember-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-      input[type="checkbox"] {
-        accent-color: var(--green-color);
-      }
+    input[type="checkbox"] {
+      accent-color: var(--green-color);
+    }
 
-      .is-background-white {
-        background-color: var(--white3-color);
-      }
+    .is-background-white {
+      background-color: var(--white3-color);
+    }
 
-      .button-primary {
-        background-color: var(--green-color);
-        color: var(--white1-color);
-      }
+    .button-primary {
+      background-color: var(--green-color);
+      color: var(--white1-color);
+    }
 
-      .has-background-img-blackpattern {
-        background: url("https://wpayze.github.io/azure/images/BlackPatternBlock.jpg");
-      }
+    .has-background-img-blackpattern {
+      background: url("https://wpayze.github.io/azure/images/BlackPatternBlock.jpg");
+    }
 
-      .is-text-color-white1 {
-        color: var(--white1-color);
-      }
+    .is-text-color-white1 {
+      color: var(--white1-color);
+    }
 
-      .is-text-color-white2 {
-        color: var(--white2-color);
-      }
+    .is-text-color-white2 {
+      color: var(--white2-color);
+    }
 
-      .is-text-color-green {
-        color: var(--green-color);
-      }
+    .is-text-color-green {
+      color: var(--green-color);
+    }
 
-      hr {
-        border: 0;
-        clear: both;
+    hr {
+      border: 0;
+      clear: both;
+      display: block;
+      width: 100%;
+      background-color: #cccccc;
+      height: 1px;
+      margin: 0 0;
+    }
+
+    .mysection {
+      padding: 0rem 3rem;
+    }
+
+    .has-background-img-airplane {
+      background: url("https://wpayze.github.io/azure/images/airplane.jpg");
+      background-size: cover;
+    }
+
+    .background-mobile {
+      background-position: 0px -45px;
+      background-repeat: no-repeat;
+    }
+
+    .background-text {
+      position: absolute;
+      bottom: 5%;
+      color: #f2f7fc;
+      letter-spacing: 1.5px;
+    }
+
+    .is-text-color-yellow {
+      color: var(--yellow-color);
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    .has-background-img-yate {
+      background: url("https://wpayze.github.io/azure/images/hero-2.png");
+      background-size: cover;
+    }
+
+    .hero-login-button {
+      position: absolute;
+      z-index: 1;
+      right: 2%;
+      top: 5%;
+    }
+
+    .mybtn-blue {
+      color: #ffffff;
+      background: #176a78;
+      border-color: #ffffff;
+      border-width: 1px;
+      border-style: solid;
+    }
+
+    .mybtn-blue:hover {
+      background: #ffffff;
+      color: #176a78;
+      border-color: #176a78;
+    }
+
+    html,
+    body,
+    #app {
+      height: 100%;
+    }
+
+    #app {
+      min-height: 100%;
+    }
+
+    .footer {
+      margin-top: -12px;
+    }
+
+    @media screen and (max-width: 768px) {
+      #menu-toggle:checked+.nav-menu {
         display: block;
-        width: 100%;
-        background-color: #cccccc;
-        height: 1px;
-        margin: 0 0;
       }
+    }
 
-      .mysection {
-        padding: 0rem 3rem;
-      }
+    .fullheight {
+      height: 100%;
+    }
+  </style>
 
-      .has-background-img-airplane {
-        background: url("https://wpayze.github.io/azure/images/airplane.jpg");
-        background-size: cover;
-      }
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
-      .background-mobile {
-        background-position: 0px -45px;
-        background-repeat: no-repeat;
-      }
+    * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      -o-box-sizing: border-box;
+      box-sizing: border-box;
+    }
 
-      .background-text {
-        position: absolute;
-        bottom: 5%;
-        color: #f2f7fc;
-        letter-spacing: 1.5px;
-      }
+    html {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
 
-      .is-text-color-yellow {
-        color: var(--yellow-color);
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
-      }
+    .btn-block {
+      margin-bottom: 10px;
+    }
 
-      .has-background-img-yate {
-        background: url("https://wpayze.github.io/azure/images/hero-2.png");
-        background-size: cover;
-      }
+    label {
+      color: #000;
+    }
 
-      .hero-login-button {
-        position: absolute;
-        z-index: 1;
-        right: 2%;
-        top: 5%;
-      }
+    input {
+      width: 100%;
+      margin-bottom: 10px;
+      background: #fff;
+      border: none;
+      outline: none;
+      padding: 10px;
+      font-size: 13px;
+      color: #4a4a4a;
+      border: 1px solid var(--green-color);
+      border-radius: 4px;
+      -webkit-transition: box-shadow 0.5s ease;
+      -moz-transition: box-shadow 0.5s ease;
+      -o-transition: box-shadow 0.5s ease;
+      -ms-transition: box-shadow 0.5s ease;
+      transition: box-shadow 0.5s ease;
+    }
 
-      .mybtn-blue {
-        color: #ffffff;
-        background: #176a78;
-        border-color: #ffffff;
-        border-width: 1px;
-        border-style: solid;
-      }
+    input:focus {
+      box-shadow: inset 0 -5px 45px var(--white3-color),
+        0 1px 1px var(--white3-color);
+    }
 
-      .mybtn-blue:hover {
-        background: #ffffff;
-        color: #176a78;
-        border-color: #176a78;
-      }
+    #next {
+      margin: 0 0;
+      width: 34%;
+      height: 40px;
+      background-color: var(--green-color);
+      border-radius: 0.5rem;
+      border: none;
+      color: #fff;
+      font-size: 1em;
+      margin-top: 10px;
+    }
 
-      html,
-      body,
-      #app {
-        height: 100%;
-      }
+    #forgotPassword {
+      display: none;
+    }
 
-      #app {
-        min-height: 100%;
-      }
+    .heading>h1 {
+      display: none;
+    }
 
-      .footer {
-        margin-top: -12px;
-      }
+    .intro>h2 {
+      display: none;
+    }
 
-      @media screen and (max-width: 768px) {
-        #menu-toggle:checked + .nav-menu {
-          display: block;
-        }
-      }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
 
-      .fullheight {
-        height: 100%;
-      }
-    </style>
+<body>
+  <div id="app">
+    <div class="columns fullheight m-0">
+      <div class="column is-4 is-narrow-mobile is-fullheight logo-login-section is-background-white">
+        <div class="container section is-fullhd has-background-img-blackpattern">
+          <img src="https://wpayze.github.io/azure/images/logo-white.png" alt="Savvly Inc. white logo" />
+          <p class="is-size-7 is-uppercase is-text-color-white1">
+            live more. earn more.
+          </p>
+        </div>
 
-    <style>
-      @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+        <div class="container column is-12 is-hidden-desktop has-background-img-airplane background-mobile">
+          <div class="section"></div>
+        </div>
 
-      * {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        -ms-box-sizing: border-box;
-        -o-box-sizing: border-box;
-        box-sizing: border-box;
-      }
-
-      html {
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-      }
-
-      .btn-block {
-        margin-bottom: 10px;
-      }
-
-      label {
-        color: #000;
-      }
-
-      input {
-        width: 100%;
-        margin-bottom: 10px;
-        background: #fff;
-        border: none;
-        outline: none;
-        padding: 10px;
-        font-size: 13px;
-        color: #4a4a4a;
-        border: 1px solid var(--green-color);
-        border-radius: 4px;
-        -webkit-transition: box-shadow 0.5s ease;
-        -moz-transition: box-shadow 0.5s ease;
-        -o-transition: box-shadow 0.5s ease;
-        -ms-transition: box-shadow 0.5s ease;
-        transition: box-shadow 0.5s ease;
-      }
-
-      input:focus {
-        box-shadow: inset 0 -5px 45px var(--white3-color),
-          0 1px 1px var(--white3-color);
-      }
-
-      #next {
-        margin: 0 0;
-        width: 34%;
-        height: 40px;
-        background-color: var(--green-color);
-        border-radius: 0.5rem;
-        border: none;
-        color: #fff;
-        font-size: 1em;
-        margin-top: 10px;
-      }
-
-      #forgotPassword {
-        display: none;
-      }
-
-      .heading > h1 {
-        display: none;
-      }
-
-      .intro > h2 {
-        display: none;
-      }
-      .error {
-        color: red;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div id="app">
-      <div class="columns fullheight m-0">
-        <div
-          class="column is-4 is-narrow-mobile is-fullheight logo-login-section is-background-white"
-        >
-          <div
-            class="container section is-fullhd has-background-img-blackpattern"
-          >
-            <img
-              src="https://wpayze.github.io/azure/images/logo-white.png"
-              alt="Savvly Inc. white logo"
-            />
-            <p class="is-size-7 is-uppercase is-text-color-white1">
-              live more. earn more.
-            </p>
-          </div>
-
-          <div
-            class="container column is-12 is-hidden-desktop has-background-img-airplane background-mobile"
-          >
-            <div class="section"></div>
-          </div>
-
-          <div class="container section is-fullhd">
-            <div class="field">
-              <div class="control">
-                <i class="fa-solid fa-lock"></i>
-                <span class="is-text-color-green has-text-weight-bold">
-                  Login</span
-                >
-              </div>
+        <div class="container section is-fullhd">
+          <div class="field">
+            <div class="control">
+              <i class="fa-solid fa-lock"></i>
+              <span class="is-text-color-green has-text-weight-bold">
+                Login</span>
             </div>
-
-            <br />
-
-            <div id="api" data-name="SelfAsserted"></div>
           </div>
 
-          <!-- <div class="container section is-fullhd">
+          <br />
+
+          <div id="api" data-name="SelfAsserted"></div>
+        </div>
+
+        <!-- <div class="container section is-fullhd">
             <div class="field">
               <div class="control">
                 <i class="fa-solid fa-lock"></i>
@@ -351,38 +334,34 @@
             </div>
           </div> -->
 
-          <div class="container section is-fullhd">
-            <p class="is-size-6">
-              Forgot
-              <a class="has-text-weight-bold" href="https://savvlyb2c.b2clogin.com/savvlyb2c.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1_Savvly_password_reset&client_id=0984e165-6270-4caf-b5a1-06124ca123f0&nonce=defaultNonce&redirect_uri=http%3A%2F%2Flocalhost%3A5000%2FeditProfileCB&scope=openid&response_type=code&prompt=login"
-                >password</a
-              >?
-            </p>
-            <p class="is-size-6">
-              Needs an account?
-              <a class="has-text-weight-bold" href="javascript:void(0)"
-                >Advisor registration</a
-              >
-            </p>
-          </div>
-
-          <div class="mysection">
-            <div class="container">
-              <hr />
-            </div>
-          </div>
+        <div class="container section is-fullhd">
+          <p class="is-size-6">
+            Forgot
+            <a class="has-text-weight-bold"
+              href="https://savvlyb2c.b2clogin.com/savvlyb2c.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1_Savvly_password_reset&client_id=0984e165-6270-4caf-b5a1-06124ca123f0&nonce=defaultNonce&redirect_uri=http%3A%2F%2Flocalhost%3A5000%2FeditProfileCB&scope=openid&response_type=code&prompt=login">password</a>?
+          </p>
+          <p class="is-size-6">
+            Needs an account?
+            <a class="has-text-weight-bold" href="javascript:void(0)">Advisor registration</a>
+          </p>
         </div>
 
-        <div
-          class="container column is-8 is-hidden-mobile has-background-img-airplane"
-        >
-          <div class="section">
-            <h1 class="is-size-4 background-text has-text-weight-light">
-              Secure your lifestyle for the future.
-            </h1>
+        <div class="mysection">
+          <div class="container">
+            <hr />
           </div>
         </div>
       </div>
+
+      <div class="container column is-8 is-hidden-mobile has-background-img-airplane">
+        <div class="section">
+          <h1 class="is-size-4 background-text has-text-weight-light">
+            Secure your lifestyle for the future.
+          </h1>
+        </div>
+      </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
