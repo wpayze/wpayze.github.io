@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="p-6">
+      <label for="">Who are you?</label>
+      <input type="text" onkeyup="updateName(event.target.value)" value="wil" />
+      <br /><br />
+      <hr />
+      <p>
+        Example: try to parse
+        <strong
+          >&lt;contentBlock id="1"&gt;Hello World!&lt;/contentBlock&gt;</strong
+        >
+      </p>
+      <button class="button is-info my-4" onclick="parse()">Parse</button>
+
+      <div class="columns">
+        <div class="column">
+          <p>Full form (what is displayed in the editor)</p>
+          <textarea name="" id="full" cols="30" rows="10"></textarea>
+        </div>
+        <div class="column">
+          <p>Compact Form read only (version stored in Problem XML)</p>
+          <textarea
+            name=""
+            id="compact"
+            cols="30"
+            rows="10"
+            readonly
+          ></textarea>
+        </div>
+      </div>
+
+      <table class="table is-fullwidth is-hoverable">
+        <thead>
+          <tr>
+            <th>ContentBlock ID</th>
+            <th>Content</th>
+            <th>Owner</th>
+          </tr>
+        </thead>
+        <tbody id="db"></tbody>
+      </table>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
