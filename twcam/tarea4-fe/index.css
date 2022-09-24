@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+/* CSS Global */
+html,
+body {
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background: linear-gradient(#445566, #667788);
+}
+
+/* Header */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(150, 150, 150, 0.8);
+  border-radius: 1em;
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 1);
+}
+
+header h1 {
+  color: #f9b84a;
+}
+
+/* Pricing Cards */
+
+#cards {
+  margin: 2em 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#cards .pricing {
+  background: linear-gradient(#666, #333);
+  display: flex;
+  align-items: center;
+  padding: 1em 0 0 0;
+  flex-direction: column;
+}
+
+#cards .pricing.main {
+  background: linear-gradient(#f9b84a, #db7224);
+  box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.5);
+  transform: scale(1.03);
+  -webkit-transform: scale(1.03);
+}
+
+#cards .pricing .pricing-title {
+  color: #fff;
+}
+
+#cards .pricing .pricing-circle {
+  border: #fff solid 1px;
+  width: 175px;
+  height: 175px;
+  margin: 30px auto;
+  border: 2px solid #fff;
+  border-radius: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+}
+
+#cards .pricing .pricing-circle .big {
+  font-size: 40px;
+}
+
+/* Features */
+
+.features-list {
+  color: #fff;
+  list-style-type: none;
+  font-size: 14px;
+  text-align: center;
+  padding: 0;
+}
+
+.features-list li {
+  padding: 7px 0;
+}
+
+.features-list .highlight {
+  color: #44aa44;
+  font-weight: bold;
+}
+
+.main .features-list .highlight {
+  color: #444444;
+}
+
+/* Pricing Card Footer */
+
+.pricing-footer {
+  background: #333;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pricing-footer button {
+  border-radius: 2em;
+  border: none;
+  background: linear-gradient(#666, #333);
+  color: #fff;
+  padding: 8px 25px;
+}
+
+.main .pricing-footer button {
+  background: linear-gradient(#f9b84a, #db7224);
+}
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #444;
+}
+
+/* Codigo para el contenedor principal (Responsive) */
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}

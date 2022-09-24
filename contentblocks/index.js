@@ -54,7 +54,7 @@ const calculateBiggestId = (tags) => {
 const parseText = (text) => {
   const allBlocks = splitContentBlocks(text);
   let newText = "";
-
+  console.log(allBlocks);
   for (const b of allBlocks) {
     if (b.replaceAll("\n", "").trim() === "") continue;
     const splittedEtaParts = b.split(/(<etaPart.*\/>)/g);
@@ -85,7 +85,6 @@ const parseCompactText = (text) => {
 
 const createDatabase = (text) => {
   const newContentBlockTags = getContentBlockTagsByText(text);
-  console.log(text,newContentBlockTags);
   [...newContentBlockTags].forEach((cb) => {
     const id = cb.getAttribute("id");
     let exists = database.find((db) => db.id == id);
