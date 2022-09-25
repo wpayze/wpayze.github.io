@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor. 
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Drag and Drop</title>
+
+    <style>
+      #capa1,
+      #capa2,
+      #capa3 {
+        width: 185px;
+        height: 250px;
+        padding: 10px;
+        border: 1px solid #aaaaaa;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="capa1">
+      <img src="carta1.png" id="carta1" alt="carta1" />
+    </div>
+    <p>Mueve la carta</p>
+    <br />
+
+    <div id="capa2" onclick="moverCarta(2)" style="cursor: pointer"></div>
+    <br />
+
+    <div id="capa3" onclick="moverCarta(3)" style="cursor: pointer"></div>
+    <br />
+
+    <script>
+      const moverCarta = (posicion) => {
+        document.getElementById("carta1").outerHTML = "";
+        document.getElementById(`capa${posicion}`).innerHTML =
+          '<img src="carta1.png" id="carta1" alt="carta1">';
+      };
+    </script>
+  </body>
+</html>
