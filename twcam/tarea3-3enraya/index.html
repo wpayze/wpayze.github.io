@@ -26,54 +26,95 @@ and open the template in the editor.
     <script language="javascript"></script>
   </head>
   <body>
-    <!-- <div id="capa1">
-      <img src="circulo.png" id="circulo" />
+    <div id="capa1">
+      <img src="circulo.png" id="circulo" ondragstart="arrastrar(this)" />
     </div>
     <div id="capa2">
-      <img src="cruz.png" id="cruz" />
-    </div> -->
+      <img src="cruz.png" id="cruz" ondragstart="arrastrar(this)" />
+    </div>
     <h1>Turno de: <span id="turno">X</span></h1>
     <article>
       <h3>3 en Raya</h3>
       <table id="tabla">
         <tr>
-          <td id="0" onclick="movimiento(this)"></td>
-          <td id="1" onclick="movimiento(this)"></td>
-          <td id="2" onclick="movimiento(this)"></td>
+          <td
+            id="0"
+            onclick="movimiento(this)"
+            ondragover="event.preventDefault()"
+            ondrop="soltar(this)"
+          ></td>
+          <td
+            id="1"
+            onclick="movimiento(this)"
+            ondragover="event.preventDefault()"
+            ondrop="soltar(this)"
+          ></td>
+          <td
+            id="2"
+            onclick="movimiento(this)"
+            ondragover="event.preventDefault()"
+            ondrop="soltar(this)"
+          ></td>
         </tr>
         <tr>
-          <td id="3" onclick="movimiento(this)"></td>
-          <td id="4" onclick="movimiento(this)"></td>
-          <td id="5" onclick="movimiento(this)"></td>
+          <td
+            id="3"
+            onclick="movimiento(this)"
+            ondragover="event.preventDefault()"
+            ondrop="soltar(this)"
+          ></td>
+          <td
+            id="4"
+            onclick="movimiento(this)"
+            ondragover="event.preventDefault()"
+            ondrop="soltar(this)"
+          ></td>
+          <td
+            id="5"
+            onclick="movimiento(this)"
+            ondragover="event.preventDefault()"
+            ondrop="soltar(this)"
+          ></td>
         </tr>
         <tr>
-          <td id="6" onclick="movimiento(this)"></td>
-          <td id="7" onclick="movimiento(this)"></td>
-          <td id="8" onclick="movimiento(this)"></td>
+          <td
+            id="6"
+            onclick="movimiento(this)"
+            ondragover="event.preventDefault()"
+            ondrop="soltar(this)"
+          ></td>
+          <td
+            id="7"
+            onclick="movimiento(this)"
+            ondragover="event.preventDefault()"
+            ondrop="soltar(this)"
+          ></td>
+          <td
+            id="8"
+            onclick="movimiento(this)"
+            ondragover="event.preventDefault()"
+            ondrop="soltar(this)"
+          ></td>
         </tr>
       </table>
     </article>
 
     <script>
       let turno = "X";
-      let contador = 0;
       const movimiento = (casilla) => {
         const imagen =
           turno == "X"
             ? '<img src="cruz.png" id="cruz" />'
             : '<img src="circulo.png" id="circulo" />';
 
-        if (casilla.innerHTML == "") {
-          //Solo si esta vacia!
-          casilla.innerHTML = imagen;
-          turno = turno == "X" ? "0" : "X";
-          contador++;
-          console.log(contador);
-
-          document.getElementById("turno").innerHTML =
-            contador < 9 ? turno : "JUEGO FINALIZADO";
-        }
+        casilla.innerHTML = imagen;
+        turno = turno == "X" ? "0" : "X";
+		document.getElementById("turno").innerHTML = turno;
       };
+
+      let imagenArrastrada = null;
+      const arrastrar = (imagen) => (imagenArrastrada = imagen.outerHTML);
+      const soltar = (casilla) => (casilla.innerHTML = imagenArrastrada);
     </script>
   </body>
 </html>
