@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario 1 - Wilfredo Paiz</title>
+  </head>
+  <body>
+    <a href="formulario2.html">IR A FORMULARIO 2</a>
+    <form action="">
+      <article>
+        <h1>Colores</h1>
+        <label for="color">Selecciona un color: </label>
+        <input
+          type="color"
+          name="color"
+          id="color"
+          oninput="document.getElementById('mi_color').innerHTML = this.value"
+          required
+        />
+        Valor seleccionado: <span id="mi_color"></span>
+      </article>
+
+      <article>
+        <h1>Fechas</h1>
+        <label for="fecha">Cumpleaños:</label>
+        <input type="date" name="fecha" id="fecha" max="2022-12-31" required />
+      </article>
+
+      <article>
+        <h1>Email</h1>
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" autofocus required />
+      </article>
+
+      <article>
+        <h1>Mes</h1>
+        <label for="mes">Cumpleaños (Mes y Año):</label>
+        <input type="month" id="mes" name="mes" min="2022-01" required />
+      </article>
+
+      <article>
+        <h1>Número</h1>
+        <label for="numero">Cantidad (entre 1 y 5)</label>
+        <input
+          type="number"
+          name="numero"
+          id="numero"
+          min="1"
+          max="5"
+          required
+        />
+      </article>
+
+      <article>
+        <h1>Rango</h1>
+        <label for="rango">Rango (entre 1 y 11)</label>
+        <input
+          type="range"
+          id="rango"
+          name="rango"
+          value="1"
+          min="1"
+          max="11"
+          step="2"
+          oninput="document.getElementById('mi_rango').innerHTML = this.value"
+          required
+        />
+        Valor seleccionado: <span id="mi_rango">1</span>
+      </article>
+
+      <article>
+        <h1>Búsqueda</h1>
+        <label for="busqueda">Buscar en Google:</label>
+        <input
+          type="search"
+          name="busqueda"
+          id="busqueda"
+          spellcheck="false"
+          autocorrect="off"
+          pattern="^[a-z0-9_\-]+$"
+          required
+        />
+      </article>
+
+      <article>
+        <h1>Teléfono</h1>
+        <label for="telefono">Teléfono:</label>
+        <input
+          type="tel"
+          id="telefono"
+          name="telefono"
+          maxlength="9"
+          required
+        />
+      </article>
+
+      <article>
+        <h1>Hora</h1>
+        <label for="hora">Seleccione una hora:</label>
+        <input type="time" id="hora" name="hora" step="900" required />
+      </article>
+
+      <article>
+        <h1>URL</h1>
+        <label for="url">Introduce tu homepage:</label>
+        <input
+          type="url"
+          id="url"
+          name="url"
+          pattern="http(s?)(:\/\/)((www.)?)(([^.]+)\.)?([a-zA-z0-9\-_]+)(.uv.es)(\/[^\s]*)?"
+          required
+        />
+      </article>
+
+      <article>
+        <h1>Semana</h1>
+        <label for="semana">Seleccione una semana:</label>
+        <input
+          type="week"
+          name="semana"
+          id="semana"
+          min="2022-W05"
+          max="2022-W35"
+          required
+        />
+      </article>
+
+      <article>
+        <h1>DATALIST</h1>
+        <label for="lista"
+          >Escribe uno de estos: Edge, Firefox, Chrome, Opera, Safari:</label
+        >
+        <input list="navegadores" name="lista" id="lista" required />
+        <datalist id="navegadores">
+          <option value="Edge"></option>
+          <option value="Firefox"></option>
+          <option value="Chrome"></option>
+          <option value="Opera"></option>
+          <option value="Safari"></option>
+        </datalist>
+      </article>
+
+      <article>
+        <h1>SELECT - OPTGROUP</h1>
+        <select name="optgroup" id="optgroup">
+          <optgroup label="Coches suecos">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+          </optgroup>
+          <optgroup label="Coches alemanes">
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+          </optgroup>
+        </select>
+      </article>
+
+      <article>
+        <h1>FIELDSET - LEGEND</h1>
+        <fieldset>
+          <legend>Datos personales:</legend>
+          <label for="fname">First name:</label>
+          <input type="text" id="fname" name="fname" /><br />
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" /><br />
+          <label for="birthday">Birthday:</label>
+          <input type="date" id="birthday" name="birthday" /><br />
+        </fieldset>
+      </article>
+
+      <article>
+        <h1>PROGRESS</h1>
+        <progress id="progress" value="0" max="100"></progress>
+        <button type="button" onclick="comenzar()">COMENZAR</button>
+      </article>
+
+      <article>
+        <h1>METER</h1>
+        <meter id="2de10" max="10" min="0" value="2"></meter>
+        <label for="2de10">2 de10</label>
+        <br />
+        <meter id="60percent" value="0.6">60%</meter>
+        <label for="60percent">60%</label>
+      </article>
+
+      <br />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <script>
+      const comenzar = () => {
+        const llenarProgress = setInterval(() => {
+          const valorActual = document.getElementById("progress").value;
+          document.getElementById("progress").value = valorActual + 1;
+
+          if (valorActual >= 100)
+            //Parar el intervalo para que no itere eternamente...
+            pararIntervalo();
+        }, 50);
+
+        const pararIntervalo = () => {
+          clearInterval(llenarProgress);
+        };
+      };
+    </script>
+  </body>
+</html>
