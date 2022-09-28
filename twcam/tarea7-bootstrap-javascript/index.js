@@ -13,6 +13,8 @@ const comprar = (producto) => {
   const precio = Number(producto.querySelector(".precioProducto").innerHTML);
   const cantidad = Number(producto.querySelector(".inputCantidad").value);
 
+  if (isNaN(cantidad) || cantidad < 1) return;
+
   if (carrito[id]) {
     carrito[id].cantidad += cantidad;
   } else {
