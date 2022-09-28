@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>DOM y BOM con JavaScript</title>
+    <link href="06_estilo.css" rel="stylesheet" type="text/css" />
+    <script languaje="javascript" src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1 id="inicio">Ejemplo 1 - DOM</h1>
+      <h2>Gestión del DOM y del BOM con Javascript</h2>
+    </header>
+    <aside class="menu">
+      <nav>
+        <h4>Ejemplos de Formularios y Estilos</h4>
+        <ul>
+          <li><a href="#checkbox" title="#">Checkbox</a></li>
+          <li><a href="#selects" title="#">Listas de selección</a></li>
+          <li><a href="#borderojo" title="#">Control de obligatoriedad</a></li>
+          <li><a href="#palabras" title="#">Resaltar palabras</a></li>
+          <li><a href="#cajas" title="#">Modelo de cajas</a></li>
+          <li><a href="#cebra" title="#">Tabla tipo cebra</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <section class="principal">
+      <header>
+        <h3>Ejemplos de diversos tipos de elementos de formularios</h3>
+        <h4>
+          Se recomienda intentar realizar de forma individual cada uno de estos
+          ejercicios de forma separada.
+        </h4>
+      </header>
+
+      <article>
+        <a name="checkbox" />
+        <h3>Control de checkboxes</h3>
+        <p>
+          Controlar un mínimo y máximo de checkboxes seleccionados. Para hacer
+          el submit debe haber al menos un checkbox seleccionado y en cualquier
+          momentos solo puede haber un máximo de 3 seleccionados a la vez.
+        </p>
+        <p></p>
+        <form
+          action="p1.html"
+          method="post"
+          onchange="comprobar(event);"
+          id="formulario_checkboxes"
+        >
+          <input name="mi_check" value="1" type="checkbox" />opción 1<br />
+          <input name="mi_check" value="2" type="checkbox" />opción 2<br />
+          <input name="mi_check" value="3" type="checkbox" />opción 3<br />
+          <input name="mi_check" value="4" type="checkbox" />opción 4<br />
+          <input name="mi_check" value="5" type="checkbox" />opción 5<br />
+          <input name="mi_check" value="6" type="checkbox" />opción 6<br />
+          <br /><br />
+          <input type="submit" id="boton" value="Submit" disabled />&nbsp;<input
+            type="reset"
+            value="Reset"
+          />
+        </form>
+      </article>
+
+      <article>
+        <a name="selects" />
+        <h3>Elementos seleccionables</h3>
+        <p>Permitir el paso de elementos de un lado al otro de las listas.</p>
+        <p></p>
+        <form action="#" method="post">
+          <table
+            cellspacing="0"
+            cellpadding="0"
+            width="500"
+            align="center"
+            border="0"
+          >
+            <tbody>
+              <tr>
+                <td valign="middle" align="center">
+                  <select id="select_izq" size="10" style="width: 80px">
+                    <option value="1">opcion 1</option>
+                    <option value="2">opcion 2</option>
+                    <option value="5">opcion 5</option>
+                    <option value="6">opcion 6</option>
+                    <option value="7">opcion 7</option>
+                    <option value="8">opcion 8</option>
+                  </select>
+                </td>
+                <td valign="top" align="center" width="150">
+                  <input
+                    onclick="selects(1);"
+                    type="button"
+                    value="     >     "
+                  /><br /><br />
+                  <input
+                    onclick="selects(2);"
+                    type="button"
+                    value="     >>    "
+                  /><br /><br />
+                  <input
+                    onclick="selects(3);"
+                    type="button"
+                    value="    <<     "
+                  /><br /><br />
+                  <input
+                    onclick="selects(4);"
+                    type="button"
+                    value="     <     "
+                  />
+                </td>
+                <td valign="middle" align="center">
+                  <select id="select_der" size="10" style="width: 80px">
+                    <option value="3">opcion 3</option>
+                    <option value="4">opcion 4</option>
+                  </select>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </article>
+
+      <article>
+        <a name="borderojo" />
+        <h3>Elementos obligatorios</h3>
+        <p>
+          Añadir un borde rojo al campo que esté vacío al presionar el botón.
+        </p>
+        <form id="form_obl">
+          <p>Campo no obligatorio: <input type="text" class="nobl" /></p>
+          <p>** Campo obligatorio: <input type="text" class="obl" /></p>
+          <p>Campo no obligatorio: <input type="text" class="nobl" /></p>
+          <p>Campo no obligatorio: <input type="text" class="nobl" /></p>
+          <p>** Campo obligatorio: <input type="text" class="obl" /></p>
+          <p>
+            <input
+              type="button"
+              value="Comprobar"
+              onclick="comprobar_obligatorio();"
+            /><input type="reset" />
+          </p>
+        </form>
+      </article>
+
+      <article>
+        <a name="palabras" />
+        <h3>Resaltar palabras</h3>
+        <p>
+          Resaltar (poner en negrita) cada palabra del siguiente párrafo al
+          pasar el cursor por encima de ella.
+        </p>
+        <p>
+          <span
+            id="p01"
+            onmouseover="resaltar2(this);"
+            onmouseout="desresaltar2(this);"
+            >Así</span
+          >
+          <span
+            id="p02"
+            onmouseover="resaltar2(this);"
+            onmouseout="desresaltar2(this);"
+            >resaltamos</span
+          >
+          <span
+            id="p03"
+            onmouseover="resaltar2(this);"
+            onmouseout="desresaltar2(this);"
+            >palabras</span
+          >
+          <span
+            id="p04"
+            onmouseover="resaltar2(this);"
+            onmouseout="desresaltar2(this);"
+            >de</span
+          >
+          <span
+            id="p05"
+            onmouseover="resaltar2(this);"
+            onmouseout="desresaltar2(this);"
+            >manera</span
+          >
+          <span
+            id="p06"
+            onmouseover="resaltar2(this);"
+            onmouseout="desresaltar2(this);"
+            >individualizada.</span
+          >
+        </p>
+      </article>
+
+      <article>
+        <a name="cajas" />
+        <h3>Modelo de cajas</h3>
+        <p>Asociar cada slider con el modelo de cajas de CSS3.</p>
+        <div
+          style="
+            border: 1px solid black;
+            float: left;
+            margin: 0px 20px 0px 0px;
+            padding: 0px 20px 0px 20px;
+          "
+        >
+          <p>
+            Margen (5-20):
+            <input
+              type="range"
+              value="5"
+              min="5"
+              max="20"
+              oninput="cajas('M',this.value);"
+            />
+          </p>
+          <p>
+            Borde (5-20):
+            <input
+              type="range"
+              value="5"
+              min="5"
+              max="20"
+              oninput="cajas('B',this.value);"
+            />
+          </p>
+          <p>
+            Padding (5-20):
+            <input
+              type="range"
+              value="5"
+              min="5"
+              max="20"
+              oninput="cajas('P',this.value);"
+            />
+          </p>
+        </div>
+        <div class="contenedor">
+          <div class="caja"><span>Contenido</span></div>
+        </div>
+      </article>
+
+      <article>
+        <a name="cebra" />
+        <h3>Tabla tipo cebra</h3>
+        <p>
+          Crear una tabla de tipo cebra, es decir, con los colores de fondo de
+          las líneas alternadas, seleccionando los colores de una paleta de
+          colores determinada.
+        </p>
+        <p align="center">
+          Filas impares:<input
+            type="color"
+            value="#FFFFFF"
+            onChange="cambiafila('impar', this.value);"
+          />. Filas pares:<input
+            type="color"
+            value="#a6caf5"
+            onChange="cambiafila('par', this.value);"
+          />
+        </p>
+        <table class="zebraStripe">
+          <tr>
+            <th>Nombre</th>
+            <th>Ciudad</th>
+          </tr>
+          <tr>
+            <td>Ramón</td>
+            <td>Valencia</td>
+          </tr>
+          <tr>
+            <td>Nuria</td>
+            <td>Madrid</td>
+          </tr>
+          <tr>
+            <td>Debra</td>
+            <td>San Diego</td>
+          </tr>
+          <tr>
+            <td>Mandy</td>
+            <td>Londres</td>
+          </tr>
+          <tr>
+            <td>Andrés</td>
+            <td>Buenos Aires</td>
+          </tr>
+        </table>
+        <p></p>
+      </article>
+
+      <article>
+        <h3>Añadir Texto</h3>
+        <p>Añade el texto dentro de la capa pegar</p>
+        <form>
+          Texto a añadir: <input type="text" id="texto" />
+
+          <p><input type="button" value="Añadir" onclick="addTexto();" /></p>
+          <p id="copiado" style="display:none; color: green">COPIADO A SU PORTAPAPELES!</p>
+        </form>
+        <div id="pegar"></div>
+      </article>
+    </section>
+
+    <footer>TWCNAM - PLC - WILFREDO PAIZ - TAREA 6</footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
