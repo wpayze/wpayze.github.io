@@ -51,8 +51,8 @@ const init = () => {
 };
 
 window.onload = function () {
-    init();
-}
+  init();
+};
 
 //Checkboxes
 const comprobar = (e) => {
@@ -67,6 +67,9 @@ const comprobar = (e) => {
     document.getElementById("boton").removeAttribute("disabled");
   else document.getElementById("boton").setAttribute("disabled", "true");
 };
+
+const resetSubmitButton = () =>
+  document.getElementById("boton").setAttribute("disabled", "true");
 
 //Listas
 const selects = (tipo) => {
@@ -140,9 +143,9 @@ function addTexto() {
   texto.select();
   texto.setSelectionRange(0, 99999);
   navigator.clipboard.writeText(texto.value);
-  document.getElementById("copiado").style.display ="block";
+  document.getElementById("copiado").style.display = "block";
 
-  setTimeout( () => {
-    document.getElementById("copiado").style.display ="none"
-  }, 1500)
+  setTimeout(() => {
+    document.getElementById("copiado").style.display = "none";
+  }, 1500);
 }
