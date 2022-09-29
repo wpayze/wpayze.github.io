@@ -6,9 +6,13 @@ window.onload = function () {
 };
 
 const getdata = () => {
-  fetch(urlProductos + "productos")
-    .then((res) => res.json())
-    .then((productos) => mostrarProductos(productos));
+  //Ahora usando JQUERY
+  $.ajax({
+    url: urlProductos + "productos",
+    success: function(productos) {
+      mostrarProductos(productos)
+    }
+  })
 };
 
 const mostrarProductos = (productos) => document.getElementById("rowProductos").innerHTML = productos.reduce( (prev, curr) => prev + generarProducto(curr), "");

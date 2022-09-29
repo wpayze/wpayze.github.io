@@ -1,0 +1,29 @@
+{
+    "productos": [
+      {
+        "id": "1",
+        "nombre": "Producto 1",
+        "precio": "300",
+        "imagen": "movil1.jpg"
+      },
+      {
+        "id": "2",
+        "nombre": "Producto 2",
+        "precio": "400",
+        "imagen": "movil2.jpg"
+      },
+      {
+        "id": "3",
+        "nombre": "Producto 3",
+        "precio": "500",
+        "imagen": "movil3.jpg"
+      },
+      {
+        "id": "4",
+       "nombre": "Producto 4",
+        "precio": "600",
+        "imagen": "movil4.jpg"
+      }
+      
+    ]
+}
