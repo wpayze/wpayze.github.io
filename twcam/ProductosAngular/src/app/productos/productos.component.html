@@ -1,0 +1,22 @@
+<div class="container" fxLayout="column" fxLayoutGap="10px">
+  <div fxFlex>
+    <mat-grid-list cols="4" rowHeight="300px">
+      <mat-grid-tile class="productoCard" *ngFor="let elemento of vProductos" (click)="selectProducto(elemento)">
+        <img
+          height="130px"
+          width="120px"
+          src="{{ elemento.imagen }}"
+          alt="{{ elemento.nombre }}"
+        />
+        <mat-grid-tile-footer>
+          <h1 mat-line>{{ elemento.nombre | uppercase }}</h1>
+          <p mat-line>
+            <span> {{ elemento.precio }} </span>
+          </p>
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+  <app-detalle-producto *ngIf="productoSeleccionado.id !== -1" [producto]="productoSeleccionado"></app-detalle-producto>
+</div>

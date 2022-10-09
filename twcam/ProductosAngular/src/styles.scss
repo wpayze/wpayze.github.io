@@ -1,0 +1,23 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.container {
+  margin: 20px;
+  display: flex;
+}
+
+.productoCard:hover {
+  cursor: pointer;
+
+  &:hover {
+    background: #f2f2f2;
+  }
+}
+
+.checked {
+  color: orange;
+}
