@@ -1,4 +1,4 @@
-# ProductosAngular
+# ProductosAngular PARTE 2 - TAREA 11
 
 ## ESTA ES LA SEGUNDA VERSION HECHA SIGUIENDO LA DIAPOSITIVA "PLC2 Frameworks Javascript Angular 2022 23 p3"
 
