@@ -1,0 +1,61 @@
+<div
+  class="container"
+  fxLayout="row"
+  fxLayout.sm="column"
+  fxLayout.xs="column"
+  fxLayoutAlign.gt-md="space-around center"
+  fxLayoutGap="10px"
+  fxLayoutGap.xs="0"
+>
+  <div fxFlex fxLayout="column">
+    <p>Detalles del Producto</p>
+
+    <div fxFlex>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>
+            <h3>{{ producto.nombre | uppercase }}</h3>
+            <img
+              mat-card-image
+              src="{{ producto.imagen }}"
+              alt="{{ producto.nombre }}"
+            />
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ producto.nombre }}</p>
+        </mat-card-content>
+        <mat-card-content>
+          <p>{{ producto.precio }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>Comprar</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+  <div fxFlex fxLayout="column">
+    <p>Comentarios acerca del Producto</p>
+
+    <div fxFlex>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>
+            <h3>{{ producto.nombre | uppercase }}</h3>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content *ngFor="let comentario of producto.comentarios">
+          <span class="fa fa-star" [ngClass]="{'checked': comentario.estrellas >= 1}"></span>
+          <span class="fa fa-star" [ngClass]="{'checked': comentario.estrellas >= 2}"></span>
+          <span class="fa fa-star" [ngClass]="{'checked': comentario.estrellas >= 3}"></span>
+          <span class="fa fa-star" [ngClass]="{'checked': comentario.estrellas >= 4}"></span>
+          <span class="fa fa-star" [ngClass]="{'checked': comentario.estrellas >= 5}"></span>
+
+          <p><strong>{{ comentario.autor }}</strong> ({{ comentario.fecha }})</p>
+          <p>{{ comentario.comentario }}</p>
+          <br>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
