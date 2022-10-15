@@ -1,0 +1,35 @@
+<div class="container"
+     fxLayout="column"
+     fxLayoutGap="10px">
+
+     <div fxFlex>
+            <div>
+               <h3>Contacto</h3>
+               <hr>
+            </div>
+     </div>
+
+    <div fxFlex>
+      <h3>Localización</h3> 
+      <div fxLayout="column" fxLayout.gt-sm="row">
+          <div fxFlex="50" fxFlexOffset="20px">
+                <h4>Dirección</h4>
+    	<address style="text-size-adjust: 80%">
+    		  Calle nueva <br> Burjassot, Valencia<br> España<br>
+     		 <i><fa-icon [icon]="faPhone"></fa-icon></i>: +555 555 5555<br>
+     		 <i><fa-icon [icon]="faFax"></fa-icon></i>: +555 555 5555<br>
+     		 <i><fa-icon [icon]="faEnvelope"></fa-icon></i>:
+     		 <a href="mailto:mitienda@moviles.net">mitienda@moviles.net</a>
+    	</address>
+               <p></p>
+                <div>
+                    <a mat-raised-button href="tel:+555555555"><i><fa-icon [icon]="faPhone"></fa-icon></i> Llamar</a>
+                    <a mat-raised-button href="mailto:mitienda@moviles.net"><i><fa-icon [icon]="faEnvelope"></fa-icon></i> Email</a>
+                </div>
+            </div>
+          <div fxFlex="40">
+                <h4>Mapa</h4>
+          </div>
+        </div>
+      </div>
+</div>
