@@ -1,6 +1,6 @@
 # ProductosAngular
 
-##ESTA ES LA SEGUNDA VERSION HECHA SIGUIENDO LA DIAPOSITIVA "PLC2 Frameworks Javascript Angular 2022 23 p3"
+## ESTA ES LA SEGUNDA VERSION HECHA SIGUIENDO LA DIAPOSITIVA "PLC2 Frameworks Javascript Angular 2022 23 p3"
 
 Tienda de 4 productos hecha en Angular version 14.2.5.
 Master TWCAM - Wilfredo Paiz
