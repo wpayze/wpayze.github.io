@@ -1,4 +1,4 @@
-# ProductosAngular - Tarea 13 - Wilfredo Paiz - TWCAM
+# ProductosAngular - Tarea 14 - Wilfredo Paiz - TWCAM
 
 Tienda de productos hecha en Angular version 14.2.5.
 Master TWCAM - Wilfredo Paiz
