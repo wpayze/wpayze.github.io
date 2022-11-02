@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X - 0</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css">
+    <style>
+        .column {
+            border: 1px solid #000;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-6">
+        <h1 class="title">Jugador: <span id="nombreJugador"></span></h1>
+        <h1 class="title">Color: <span id="colorJugador"></span></h1>
+        <div class="columns is-multiline">
+            <div class="column is-4" onclick="jugada(this)">
+
+            </div>
+            <div class="column is-4" onclick="jugada(this)">
+                
+            </div>
+            <div class="column is-4" onclick="jugada(this)">
+                
+            </div>
+            <div class="column is-4" onclick="jugada(this)">
+                
+            </div>
+            <div class="column is-4" onclick="jugada(this)">
+                
+            </div>
+            <div class="column is-4" onclick="jugada(this)">
+                
+            </div>
+            <div class="column is-4" onclick="jugada(this)">
+                
+            </div>
+            <div class="column is-4" onclick="jugada(this)">
+                
+            </div>
+            <div class="column is-4" onclick="jugada(this)">
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let jugador = "Wil"
+        let color = "red"
+
+        function jugada (casilla) {
+            casilla.style.background = color;
+            
+            document.getElementById("nombreJugador").innerHTML = jugador
+            document.getElementById("colorJugador").innerHTML = color
+
+            if (jugador == "Wil")
+                jugador = "Breilyn"
+            else if (jugador == "Breilyn")
+                jugador = "Wil"
+
+            if (color == "red")
+                color = "green"
+            else if (color == "green")
+                color = "red"
+        }
+    </script>
+</body>
+</html>
