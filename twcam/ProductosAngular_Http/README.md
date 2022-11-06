@@ -1,4 +1,4 @@
-# ProductosAngular - Tarea 16 - Wilfredo Paiz - TWCAM
+# Comunicacion Asincrona - Tarea 17 - Wilfredo Paiz - TWCAM
 
 Tienda de productos hecha en Angular version 14.2.5.
 Master TWCAM - Wilfredo Paiz
