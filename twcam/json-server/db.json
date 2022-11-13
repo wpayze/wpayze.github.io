@@ -18,6 +18,12 @@
           "comentario": "Producto correcto, envío con retraso",
           "autor": "Emilio Fernández",
           "fecha": "2016-12-03T07:52:24.236094Z"
+        },
+        {
+          "autor": "Wilfredo",
+          "comentario": "Hola Mundo.",
+          "estrellas": 5,
+          "fecha": "2022-11-13T04:54:24.528Z"
         }
       ]
     },
@@ -111,5 +117,46 @@
       "puesto": "Administración"
     }
   ],
-  "consultas": []
+  "consultas": [
+    {
+      "nombre": "Wilfredo",
+      "apellidos": "Paiz",
+      "telefono": "12312312",
+      "email": "asdfsd@asdfas.com",
+      "contactar": false,
+      "tipocontacto": "Email",
+      "mensaje": "asdfasdfdsf",
+      "id": 1
+    },
+    {
+      "nombre": "Prueba2",
+      "apellidos": "Paiz",
+      "telefono": "12312312",
+      "email": "asdfasd@asdf.com",
+      "contactar": true,
+      "tipocontacto": "Teléfono",
+      "mensaje": "aasdfasdf",
+      "id": 2
+    },
+    {
+      "nombre": "Wilfredo",
+      "apellidos": "Paiz",
+      "telefono": "123123",
+      "email": "asdfsd@asdfasdf.com",
+      "contactar": true,
+      "tipocontacto": "Email",
+      "mensaje": "asdfasdf",
+      "id": 3
+    },
+    {
+      "nombre": "asdfasdf",
+      "apellidos": "asdfasdf",
+      "telefono": "123123",
+      "email": "asdfsd@asdfasdf.com",
+      "contactar": false,
+      "tipocontacto": "Email",
+      "mensaje": "asdfasdf",
+      "id": 4
+    }
+  ]
 }

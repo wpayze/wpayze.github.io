@@ -1,6 +1,10 @@
-<div [hidden]="producto.id !== -1">
+<div [hidden]="producto.id !== -1 || errorMensaje">
   <mat-spinner></mat-spinner>
   <h4>Cargando...</h4>
+</div>
+<div *ngIf="errorMensaje">
+  <h2>Error</h2>
+  <h4>{{ errorMensaje }}</h4>
 </div>
 <div
   class="container"
@@ -32,7 +36,7 @@
           <h3>{{ producto.nombre | uppercase }}</h3>
           <img
             mat-card-image
-            src="{{ producto.imagen }}"
+            src="{{ BaseURL + producto.imagen }}"
             alt="{{ producto.nombre }}"
           />
         </mat-card-title>
@@ -61,7 +65,26 @@
       </mat-card-header>
 
       <mat-card-content *ngFor="let elemento of producto.comentarios">
-        <p>{{ elemento.estrellas }}</p>
+        <span
+          class="fa fa-star"
+          [ngClass]="{ checked: elemento.estrellas >= 1 }"
+        ></span>
+        <span
+          class="fa fa-star"
+          [ngClass]="{ checked: elemento.estrellas >= 2 }"
+        ></span>
+        <span
+          class="fa fa-star"
+          [ngClass]="{ checked: elemento.estrellas >= 3 }"
+        ></span>
+        <span
+          class="fa fa-star"
+          [ngClass]="{ checked: elemento.estrellas >= 4 }"
+        ></span>
+        <span
+          class="fa fa-star"
+          [ngClass]="{ checked: elemento.estrellas >= 5 }"
+        ></span>
         <p>{{ elemento.comentario }}</p>
         <p>{{ elemento.autor }}</p>
         <p>{{ elemento.fecha }}</p>
