@@ -1,0 +1,17 @@
+<div *ngFor="let msj of mensajes">{{ msj }}</div>
+
+<mat-form-field class="half-width">
+  <input
+    matInput
+    placeholder="Mensaje"
+    [(ngModel)]="mensaje"
+    (keyup)="$event.key == 'Enter' && sendMensaje()"
+  />
+</mat-form-field>
+<button
+  mat-button
+  class="background-primary text-floral-white"
+  (click)="sendMensaje()"
+>
+  Enviar
+</button>
