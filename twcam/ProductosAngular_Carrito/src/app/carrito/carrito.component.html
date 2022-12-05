@@ -1,0 +1,40 @@
+<p><strong>Carrito de Compra</strong></p>
+<table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th>Total</th>
+        <th>...</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="productos.length === 0">
+        <tr>
+            <td style="text-align: center;" colspan="100%">No tiene productos en su carrito.</td>
+        </tr>
+    </tbody>
+    <tbody *ngFor="let carrito of productos">
+        <tr>
+            <td>
+                <img width="50px"
+                src="{{ BaseURL + carrito.producto.imagen }}"
+                alt="{{ carrito.producto.nombre }}"
+              />
+            </td>
+            <td>{{carrito.producto.nombre}} </td>
+            <td>{{carrito.producto.precio}}</td>
+            <td>{{carrito.cantidad}}</td>
+            <td>{{carrito.producto.precio * carrito.cantidad}}</td>
+            <td>
+                <button style="background: green; color: #fff" (click)="agregarUno(carrito.producto)">+</button>
+                <button style="background: yellow;" (click)="quitarUno(carrito.producto)">-</button>
+                <button style="background: red; color: #fff" (click)="borrarDelCarrito(carrito.producto)"><fa-icon [icon]="faTrash"></fa-icon></button>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Total del carrito: </strong> {{totalCarrito}}</p>
+  

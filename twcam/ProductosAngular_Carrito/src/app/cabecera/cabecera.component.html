@@ -1,0 +1,57 @@
+<mat-toolbar color="primary">
+  <span
+    ><img src="{{ BaseURL }}imagenes/logo.png" height="30" width="30"
+  /></span>
+  <a mat-button routerLink="/inicio" routerLinkActive="activo"
+    ><fa-icon [icon]="faHome"></fa-icon> Inicio
+  </a>
+  <a mat-button routerLink="/nosotros" routerLinkActive="activo"
+    ><fa-icon [icon]="faInfo"></fa-icon> Nosotros
+  </a>
+  <a mat-button routerLink="/productos" routerLinkActive="activo"
+    ><fa-icon [icon]="faList"></fa-icon> Productos
+  </a>
+  <a mat-button routerLink="/contacto" routerLinkActive="activo"
+    ><fa-icon [icon]="faAddressCard"></fa-icon> Contacto
+  </a>
+
+  <span class="flex-spacer"> </span>
+  <div>
+    <a mat-button (click)="abrirCarrito()">
+      <fa-icon [icon]="faShoppingCart"> </fa-icon> Carrito
+    </a>
+  </div>
+  <div *ngIf="login == null || login.nombre == ''; else elseBlock">
+    <a mat-button (click)="abrirFormularioLogin()">
+      <fa-icon [icon]="faSignInAlt"> </fa-icon> Login
+    </a>
+  </div>
+  <ng-template #elseBlock>
+    <div>
+      <span class="flex-spacer">
+        {{ login.nombre }} <a href="" (click)="cerrarSesion()"> &times; </a>
+      </span>
+    </div>
+  </ng-template>
+</mat-toolbar>
+
+<div
+  class="container jumbotron"
+  fxLayout="row"
+  fxLayout.sm="column"
+  fxLayout.xs="column"
+  fxLayoutAlign.xs="start center"
+  fxLayoutAlign.sm="start center"
+  fxLayoutAlign.gt-sm="center center"
+  fxLayoutGap="10px"
+>
+  <div fxFlex fxFlex.gt-sm="10%">
+    <img src="../assets/images/logo.png" alt="Logo" height="80" width="80" />
+  </div>
+  <div fxFlex fxFlex.gt-sm="20%">
+    <h1>Mi tienda - Wilfredo Paiz - TWCAM</h1>
+    <p>Precios baratos todo el año</p>
+  </div>
+
+  <div fxFlex></div>
+</div>
