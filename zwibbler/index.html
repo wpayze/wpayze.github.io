@@ -135,16 +135,20 @@
           <div style="font-size: 23px">Arrow Playground</div>
           <br>
           <label for="">Arrow Size</label>
-          <input type="number" placeholder="arrowSize" id="size" value="15" onChange="updateArrow()">
+          <input type="number" placeholder="arrowSize" id="size" value="15" onchange="updateArrow()">
           <hr>
 
           <label for="">Arrow Inner Offset</label>
-          <input type="number" placeholder="arrowInnerOffset" id="inner" value="15" onChange="updateArrow()">
+          <input type="number" placeholder="arrowInnerOffset" id="inner" value="15" onchange="updateArrow()">
           <hr>
 
           <label for="">Arrow X Offset</label>
-          <input type="number" placeholder="arrowXOffset" id="xoffset" value="30" onChange="updateArrow()">
+          <input type="number" placeholder="arrowXOffset" id="xoffset" value="30" onchange="updateArrow()">
           <hr>
+        </div>
+        <div>
+            <label for="">Values update automatically, just click this in case you lose the arrow selection</label>
+            <button type="button" onclick="updateArrow()" style="color:#000">Update Manually</button>
         </div>
         
       </div>
