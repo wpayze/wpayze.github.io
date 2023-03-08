@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrow Playground</title>
+    <style>
+      .zwibbler-blue {
+        background: #222;
+        color: #ccc;
+      }
+
+      #zwibbler-side-menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 300px;
+        height: 800px;
+        overflow-y: auto;
+        text-align: center;
+        font-family: Arial;
+        color: #ccc;
+        font-size: 20px;
+      }
+
+      #zwibbler1 {
+        position: absolute;
+        top: 0;
+        left: 300px;
+        bottom: 0;
+        right: 200px;
+        width: 800px;
+        height: 800px;
+      }
+
+
+      .tools a {
+        color: #ccc;
+        font-size: 40px;
+        line-height: 55px;
+        border: 2px solid #ccc;
+        display: inline-block;
+        text-align: center;
+        margin: 5px;
+        padding: 10px;
+        border-radius: 3px;
+      }
+
+
+      .tools a:hover,
+      .tools-small a:hover,
+      .page-buttons a:hover,
+      .text-tools a:hover,
+      .doc-buttons a:hover {
+        color: #222;
+        background: #ccc;
+      }
+
+      .noselect {
+        -moz-user-select: -moz-none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      select {
+        background: transparent;
+        color: #ccc;
+        padding: 5px;
+        border: 2px solid #ccc;
+        font-size: 20px;
+      }
+
+      .page-buttons a {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        text-align: center;
+        font-size: 20px;
+        color: #ccc;
+      }
+
+      .page-buttons {
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      .text-tools a {
+        display: block;
+        height: 30px;
+        font-size: 20px;
+        vertical-align: middle;
+        text-align: left;
+        color: #ccc;
+        padding: 0px 55px;
+        width: 90%;
+        text-decoration: none;
+      }
+
+      .text-tools a .fa {
+        line-height: 30px;
+        text-align: center;
+        font-size: 25px;
+      }
+
+      .doc-buttons a {
+        display: inline-block;
+        border: 2px solid #ccc;
+        margin: 5px;
+        color: #ccc;
+        border-radius: 3px;
+        padding: 5px;
+        cursor: pointer;
+        width: 78px;
+      }
+
+      input {
+        color: #000!important;
+      }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div id="zwibbler-container" class="col-xs-12">
+      <div id="zwibbler-side-menu" class="zwibbler-blue noselect">
+        <div class="logo">
+          <div>
+            <span>CS - XTA</span>
+          </div>
+          <div style="font-size: 23px">Arrow Playground</div>
+          <br>
+          <label for="">Arrow Size</label>
+          <input type="number" placeholder="arrowSize" id="size" value="15" onChange="updateArrow()">
+          <hr>
+
+          <label for="">Arrow Inner Offset</label>
+          <input type="number" placeholder="arrowInnerOffset" id="inner" value="15" onChange="updateArrow()">
+          <hr>
+
+          <label for="">Arrow X Offset</label>
+          <input type="number" placeholder="arrowXOffset" id="xoffset" value="30" onChange="updateArrow()">
+          <hr>
+        </div>
+        
+      </div>
+
+      <div id="zwibbler1"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://zwibbler.com/zwibbler-demo.js"></script>
+    <script>
+      var zwibbler = Zwibbler.create("zwibbler1", {
+        showToolbar: false,
+        showColourPanel: false,
+        showRuler: false,
+      });
+
+      zwibbler.useArrowTool({ arrowStyle: 'solid'})
+      const updateArrow = () => {
+
+        const size = document.getElementById("size").value;
+        const xoffset = document.getElementById("xoffset").value;
+        const inner = document.getElementById("inner").value;
+
+        zwibbler.useArrowTool({ arrowStyle: 'solid', arrowSize: size, arrowInnerOffset: inner, arrowXOffset: xoffset });
+      }
+
+    </script>
+  </body>
+</html>
