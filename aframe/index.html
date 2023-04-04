@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <img id="sky" src="sky.png">
+      </a-assets>
+      <a-sky src="#sky"></a-sky>
+
+      <a-entity position="3 3.75 -6.9">
+        <a-entity light="color: #DDDDFF; distance: 300; intensity: 1.1; type: directional"></a-entity>
+      </a-entity>
+
+      <a-entity position="-2.5 1.75 -4" rotation="10 45 0" scale="3 3 3" text="value: Simulando la luz de la luna!\nWilfredo Paiz\nTWCAM"></a-entity>      
+
+      <a-sphere position="0 1.52 -3" radius="0.3" color="green"></a-sphere>
+    
+      <a-cone position="0 1.25 -3" radius-bottom="0.25" radius-top="0.1" height="0.05" color="green"></a-cone>
+      <a-cone position="0 1.2 -3" radius-bottom="0.1" radius-top="0.25" height="0.05" color="green"></a-cone>
+    
+      <a-cone position="0 1.18 -3" radius-bottom="0.25" radius-top="0.1" height="0.05" color="green"></a-cone>
+      <a-cone position="0 1.13 -3" radius-bottom="0.1" radius-top="0.25" height="0.05" color="green"></a-cone>
+    
+      <a-cone position="0 0.7 -3" radius-bottom="0.33" radius-top="0.1" height="1" color="green"></a-cone>
+  
+      <a-cylinder position="0 0.065 -3" color="green" height="0.2" radius="0.45"></a-cylinder>
+      <a-plane position="0 0.01 -4" rotation="-90 0 0" height="5" width="5" color="white" material="src: suelo.jpg; repeat: 6 6"></a-plane>
+    </a-scene>
+  </body>
+</html>

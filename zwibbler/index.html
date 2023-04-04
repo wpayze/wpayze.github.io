@@ -145,6 +145,9 @@
           <label for="">Arrow X Offset</label>
           <input type="number" placeholder="arrowXOffset" id="xoffset" value="15" onchange="updateArrow()">
           <hr>
+
+          <img src="https://www.adslzone.net/app/uploads-adslzone.net/2019/04/borrar-fondo-imagen.jpg" alt="">
+          <textarea name="" id="" cols="30" rows="10"></textarea>
         </div>
         <div>
             <label for="">Values update automatically, just click this in case you lose the arrow selection</label>
@@ -160,13 +163,21 @@
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script src="https://zwibbler.com/zwibbler-demo.js"></script>
     <script>
-      var zwibbler = Zwibbler.create("zwibbler1", {
+      var zwibbler = null;
+
+      const init = () => {
+        zwibbler = Zwibbler.create("zwibbler1", {
         showToolbar: false,
         showColourPanel: false,
         showRuler: false,
       });
+      }
 
-      zwibbler.useArrowTool({ arrowStyle: 'solid'})
+      // Crear una flecha con redondez de esquinas
+zwibbler.useArrowTool({
+    arrowSize: 15,
+});
+
       const updateArrow = () => {
         const size = document.getElementById("size").value;
         const xoffset = document.getElementById("xoffset").value;
