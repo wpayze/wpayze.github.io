@@ -13,47 +13,47 @@
       renderer="colorManagement: true, physicallyCorrectLights"
       vr-mode-ui="enabled: false"
       device-orientation-permission-ui="enabled: false"
-      shadow="cast:false; receive:true"
+      shadow="type: pcfsoft"
     >
+
+      <a-entity light="type: directional; color: #ffffff; intensity: 5" position="2 4 -3"></a-entity>
+      <a-entity light="type: directional; color: #0000ff; intensity: 5" position="-2 4 -3"></a-entity>
+
       <a-assets>
         <a-asset-item
           id="rolex"
           src="rolex.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="burger"
+          src="burger.glb"
         ></a-asset-item>
       </a-assets>
 
       <a-camera position="0 0 0" look-controls="enabled:false"></a-camera>
 
       <a-entity mindar-image-target="targetIndex:0" shadow="cast:true">
-        <a-gltf-model
-          rotation="0 0 0"
-          position="0 0.1 1"
-          scale="0.2 0.2 0.2"
-          src="#rolex"
-          animation-mixer
-        ></a-gltf-model>
-
-        <a-entity
-          id="luz_amarilla"
-          position="-4 3 -3"
-          light="type:directional; intensity:1;color:white"
-        >
+        <a-entity position="-0.3 0 0">
+          <a-gltf-model
+            id="rolex-model1"
+            rotation="0 0 0"
+            scale="3 3 3"
+            src="#rolex"
+            geometry="primitive: box; depth: auto; height: auto; width: auto"
+            animation-mixer="autoplay: false; loop: false;"
+          ></a-gltf-model>
+        </a-entity>
+        <a-entity position="0.3 0 0">
+          <a-gltf-model
+            id="rolex-model2"
+            rotation="0 0 0"
+            scale="0.1 0.1 0.1"
+            src="#burger"
+            geometry="primitive: box; depth: auto; height: auto; width: auto"
+            animation-mixer="autoplay: false; loop: false;"
+          ></a-gltf-model>
         </a-entity>
       </a-entity>
-      
-      <a-entity id="luz_ambiente1" light="type:ambient; intensity:0.1">
-      </a-entity>
-
-      <a-circle
-        id="Separador"
-        shadow="cast:false; receive:true"
-        opacity="0.9"
-        radius="150"
-        color="white"
-        position="0 -0.6 -90"
-        rotation="-90 0 0"
-      >
-      </a-circle>
     </a-scene>
   </body>
 </html>
