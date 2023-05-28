@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Location-based AR.js demo</title>
+    <title>Location-based AR.js demo - Wilfredo Paiz - TWCAM</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script
       type="text/javascript"
@@ -61,54 +61,51 @@
       // Component to create POIs
       AFRAME.registerComponent("load-pois", {
         loadedPois: false,
+
         init: function () {
-          // Registrar el oyente de la posición GPS
-          if ("geolocation" in navigator) {
-            navigator.geolocation.watchPosition(
-              async (position) => {
-                console.log(this.loadedPois);
-                if (!this.loadedPois) {
-                  this.getPOIS(
-                    position.coords.latitude,
-                    position.coords.longitude
-                  );
-                }
-              },
-              (error) => {
-                console.error("Error al obtener la posición:", error);
-              }
+          // Register GPS position listener
+          const el = document.querySelector("[gps-new-camera]");
+          el.addEventListener("gps-camera-update-position", async (e) => {
+            console.log(
+              "new camera position " +
+                e.detail.position.latitude +
+                ", " +
+                e.detail.position.longitude
             );
-          } else {
-            console.error("El navegador no admite geolocalización.");
-          }
+            if (this.loadedPois == false) {
+              this.getPOIS(
+                e.detail.position.latitude,
+                e.detail.position.longitude
+              );
+            }
+          });
+
+          // For debug ETSE-UV
+          //const latVal = 39.512784961826604;
+          //const longVal = -0.4245460287443896;
+          //this.getPOIS(latVal, longVal);
+
+          // For debug Centro Valencia
+          //const latVal = 39.47402866521183;
+          //const longVal = -0.3762567909771192;
+          //this.getPOIS(latVal, longVal);
         },
 
         getPOIS: function (lat, long) {
-          // Download pois data from the endpoint provided
-          //is set up the the rows and distance needed
-          const url = `https://valencia.opendatasoft.com/api/records/1.0/search/?dataset=valenbisi-disponibilitat-valenbisi-dsiponibilidad&rows=3&q=&geofilter.distance=${lat},${long},5000`;
-          //console.log("lo mandado es:"+url);
-          fetch(url).then((response) => {
+          // Download pois data from open street maps
+          fetch(
+            `https://valencia.opendatasoft.com/api/records/1.0/search/?dataset=valenbisi-disponibilitat-valenbisi-dsiponibilidad&rows=10&q=&geofilter.distance=${lat},${long},5000`
+          ).then((response) => {
             response.json().then((pois) => {
-              let cont = 0;
+              cont = 0;
               // for each feature create a POI
-              pois.records.map((feature, index) => {
+              pois.records.forEach((record, index) => {
                 const { address, available, free, geo_point_2d } =
-                  feature.fields; // The variable helps invoke the data needed
-                console.log(
-                  "direccion: " +
-                    feature.fields.address +
-                    " geo: " +
-                    feature.fields.geo_point_2d +
-                    "diponibles: " +
-                    feature.fields.available
-                );
-
-                // Create gps-entity-place
+                  record.fields;
                 const poi = document.createElement("a-entity");
                 poi.setAttribute("gps-new-entity-place", {
-                  latitude: feature.fields.geo_point_2d[0],
-                  longitude: feature.fields.geo_point_2d[1],
+                  latitude: geo_point_2d[0],
+                  longitude: geo_point_2d[1],
                 });
                 const tam = 6;
                 const id = "POI_" + index;
@@ -116,39 +113,29 @@
                 poi.setAttribute("scale", { x: tam, y: tam, z: tam });
                 poi.setAttribute("poi", "distText:" + id + "_distText");
 
-                // Add geometry: sign post
                 const post = document.createElement("a-box");
-                post.setAttribute("scale", { x: 2, y: 8, z: 2 });
-                post.setAttribute("position", { x: 0, y: -2.5, z: 0 });
-                post.setAttribute("material", { color: "red" });
+                post.setAttribute("scale", { x: 2, y: 6, z: 2 });
+                post.setAttribute("position", { x: 0, y: 2.5, z: 0 });
+                post.setAttribute("material", { color: "ghostwhite" });
                 poi.appendChild(post);
 
-                // Add geometry: sign background
                 const back = document.createElement("a-box");
-                back.setAttribute("scale", { x: 25, y: 15, z: 2 });
+                back.setAttribute("scale", { x: 25, y: 8, z: 3 });
                 back.setAttribute("position", { x: 0, y: 8, z: 0 });
-                back.setAttribute("material", { color: "black" });
+                back.setAttribute("material", { color: "indigo" });
                 poi.appendChild(back);
 
-                // Add text and the variables set above
                 const text = document.createElement("a-text");
-                text.setAttribute("position", { x: 0, y: 11, z: 3 });
+                text.setAttribute("position", { x: 0, y: 10, z: 3 });
                 text.setAttribute(
                   "value",
-                  "Nombre: " +
-                    feature.fields.address +
-                    " \n Huecos disponibles: " +
-                    feature.fields.free +
-                    " \n Bisis disponibles: " +
-                    feature.fields.available
+                  `Parada: ${address}\nHuecos libres: ${free}\nBicis libres: ${available}`
                 );
-
                 text.setAttribute("align", "center");
                 text.setAttribute("width", 40);
                 text.setAttribute("wrapcount", 20);
                 poi.appendChild(text);
 
-                // Add distance text
                 const textDist = document.createElement("a-text");
                 textDist.setAttribute("id", id + "_distText");
                 textDist.setAttribute("position", { x: 0, y: 7, z: 3 });
@@ -170,17 +157,29 @@
       });
     </script>
   </head>
+
   <body>
     <a-scene
       vr-mode-ui="enabled: false"
       arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: true"
       renderer="antialias: true; alpha: true"
     >
+      <!-- For debug Centro Valencia -->
+      <!-- <a-camera id="gps-new-camera" gps-new-camera='gpsMinDistance: 5; simulateLatitude: 39.47402866521183; simulateLongitude: -0.3762567909771192' camera="far:1000000;"></a-camera> -->
+
       <a-camera
         id="gps-new-camera"
         gps-new-camera="gpsMinDistance: 5"
-        camera="far:100000;"
+        camera="far:10000;"
       ></a-camera>
+
+      <!-- Plaza del ayuntamiento de Valencia -->
+      <a-entity
+        material="color: red"
+        geometry="primitive: box"
+        gps-entity-place="latitude: 39.470021834872675; longitude: -0.37635147292514465"
+        scale="100 100 100"
+      ></a-entity>
 
       <!-- Load POIs -->
       <a-entity id="POIS" load-pois></a-entity>
