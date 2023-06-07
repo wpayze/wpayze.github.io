@@ -92,7 +92,7 @@
         },
 
         getPOIS: function (lat, long) {
-          // Download pois data from open street maps
+          // Descargamos las paradas de la API de valenbisi.
           fetch(
             `https://valencia.opendatasoft.com/api/records/1.0/search/?dataset=valenbisi-disponibilitat-valenbisi-dsiponibilidad&rows=10&q=&geofilter.distance=${lat},${long},5000`
           ).then((response) => {
@@ -100,42 +100,50 @@
               cont = 0;
               // for each feature create a POI
               pois.records.forEach((record, index) => {
+                // Desestructurar propiedades del objeto record.fields
                 const { address, available, free, geo_point_2d } =
                   record.fields;
+
+                // Crear elemento <a-entity> para el POI
                 const poi = document.createElement("a-entity");
                 poi.setAttribute("gps-new-entity-place", {
                   latitude: geo_point_2d[0],
                   longitude: geo_point_2d[1],
                 });
-                const tam = 6;
-                const id = "POI_" + index;
+
+                const tam = 6; // Tamaño de escala para el POI
+                const id = "POI_" + index; // ID único para el POI
                 poi.setAttribute("id", id);
                 poi.setAttribute("scale", { x: tam, y: tam, z: tam });
                 poi.setAttribute("poi", "distText:" + id + "_distText");
 
+                // Agregar una caja para el poste del POI
                 const post = document.createElement("a-box");
                 post.setAttribute("scale", { x: 2, y: 6, z: 2 });
                 post.setAttribute("position", { x: 0, y: 2.5, z: 0 });
                 post.setAttribute("material", { color: "ghostwhite" });
                 poi.appendChild(post);
 
+                // Agregar una caja para el fondo del POI
                 const back = document.createElement("a-box");
                 back.setAttribute("scale", { x: 25, y: 8, z: 3 });
                 back.setAttribute("position", { x: 0, y: 8, z: 0 });
                 back.setAttribute("material", { color: "indigo" });
                 poi.appendChild(back);
 
+                // Agregar un elemento <a-text> para mostrar información de la parada
                 const text = document.createElement("a-text");
-                text.setAttribute("position", { x: 0, y: 10, z: 3 });
+                text.setAttribute("position", { x: 0, y: 15, z: 3 });
                 text.setAttribute(
                   "value",
-                  `Parada: ${address}\nHuecos libres: ${free}\nBicis libres: ${available}`
+                  `Parada: ${address}\nHuecos: ${free}\nBicis Disponibles: ${available}`
                 );
                 text.setAttribute("align", "center");
                 text.setAttribute("width", 40);
                 text.setAttribute("wrapcount", 20);
                 poi.appendChild(text);
 
+                // Agregar un elemento <a-text> para mostrar la distancia
                 const textDist = document.createElement("a-text");
                 textDist.setAttribute("id", id + "_distText");
                 textDist.setAttribute("position", { x: 0, y: 7, z: 3 });
@@ -145,8 +153,9 @@
                 textDist.setAttribute("wrapcount", 20);
                 poi.appendChild(textDist);
 
+                // Agregar el punto de interés al elemento actual (this.el)
                 this.el.appendChild(poi);
-                cont++;
+                cont++; 
               });
 
               console.log("loaded " + cont + " POIs");
